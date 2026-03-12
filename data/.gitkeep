@@ -1,1 +1,5 @@
+!pip install git+https://github.com/YoshiyukiYamauchi/mrtparse.git
+import mrtparse
+print("mrtparse is working!")
 
+!wget https://data.ris.ripe.net/rrc00/2024.01/updates.20240101.0000.gz -O updates.mrt.gz
