@@ -16,7 +16,7 @@ This project automatically detects such instability using:
 - Feature engineering
 - Isolation Forest anomaly detection
 - Time‑series visualisation
-- 
+  
 # Repository Structure
 
 ```
@@ -34,17 +34,22 @@ requirements.txt
 # 1. Download MRT File
 
 ```
+
 !pip install git+https://github.com/YoshiyukiYamauchi/mrtparse.git
 import mrtparse
 print("mrtparse is working!")
+
 ```
+
 ```
 !wget https://data.ris.ripe.net/rrc00/2024.01/updates.20240101.0000.gz -O updates.mrt.gz
+
 ```
 
 # 2. Parse MRT File
 
 ```
+
 import mrtparse
 import pandas as pd
 
@@ -103,11 +108,13 @@ for entry in reader:
 
 df = pd.DataFrame(records)
 df.head()
+
 ```
 
 # 3. Feature Engineering
 
 ```
+
 df['path_length'] = df['as_path'].apply(lambda x: len(x.split()) if isinstance(x, str) else 0)
 
 grouped = df.groupby("prefix").agg(
